@@ -52,8 +52,9 @@ To me this is insane. In a normal world you just have `apm` `npm` `wahtever-pm` 
 Melpa is here: http://melpa.org and it appears unlike a nice cli tool like `apm` for `atom` there is no cli-based search. There is in-emacs autocomplete when executing `:package-install <pkg>` but that is unacceptable as a discovery solution; we need more info! So, note the Melpa website at least for now.
 
 #### Install Cask & Pallet
-- Repo: https://github.com/cask/cask.
-- Docs: http://cask.readthedocs.org/en/latest/
+- Cask Repo: https://github.com/cask/cask
+- Cask Docs: http://cask.readthedocs.org/en/latest
+- Pallet Repo: https://github.com/rdallasgray/pallet
 
 We have a bunch of things to do:
 ```sh
