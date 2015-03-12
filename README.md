@@ -51,3 +51,30 @@ However the most immediate win is discovering spacemacs:
 
 It turns out that `Spacemacs` is great. That is what I will be using.
 
+There is a handy [tutorial](http://thume.ca/howto/2015/03/07/configuring-spacemacs-a-tutorial/) that will help kick things off assuming you want to being with configuration.
+
+On the first boot of `Spacemacs` generate the automatic `~/.spacemacs` file by typing `<SPC> : dotspacemacs/install RET`. The look at it/edit it via `SPC f e d` which will open it for you.
+
+The font is too small, try `18`.
+
+#### Theme
+
+The deafult available themes are not much to my liking. To get better ones follow these [instructions](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.md#example-themes-megapack-example). I picked out these special ones:
+
+```
+django
+fogus
+birds-of-paradise-plus
+tronesque
+busybee
+dakron
+gruvbox
+dorsey
+```
+
+#### Misc
+
+Since I am not a novice I will want [strict smart parens on](https://github.com/syl20bnr/spacemacs/blob/2d28e5325118127eae6f7602dcd7d5bfe62ab22f/doc/DOCUMENTATION.md#smartparens-strict-mode).
+
+Note to self: `dotspacemacs/config` is where most all config should live.
+
