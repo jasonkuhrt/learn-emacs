@@ -26,7 +26,7 @@ sudo rm /usr/bin/emacs
 sudo rm -rf /usr/share/emacs
 ```
 
-#### Getting started
+#### Learning about Emacs
 Some resources matter more than others:
 
 The official Emacs portal: https://www.gnu.org/software/emacs/manual/
@@ -39,37 +39,12 @@ Learn about Emacs Lisp (the programming language powering Emacs):
 - Official reference: https://www.gnu.org/software/emacs/manual/pdf/elisp.pdf
 - Official guide: https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
 
+Discover spacemacs:
+- https://github.com/syl20bnr/spacemacs
+- https://twitter.com/spacemacs
 
-#### Figuring out package management
-Next I want to setup the basis for which all subsequent installation will be based upon. After reading too much seems like we're all best off using MELPA + Cask + Pallet.
 
-- MELPA is a repository for Emacs packages
-- Cask handles dependencies and build stuff... Ok
-- Pallet intercepts the Emacs `:package-install` command such that it updates the Cask manifest for you and then runs `Cask install` for you, and probably something else(s) for you.
+#### Begin using Emacs
 
-To me this is insane. In a normal world you just have `apm` `npm` `wahtever-pm` and call it a day. Oh, and there is no automatic and clean way to uninstall packages... Wow.
+It turns out that `Spacemacs` is great. That is what I will be using.
 
-Melpa is here: http://melpa.org and it appears unlike a nice cli tool like `apm` for `atom` there is no cli-based search. There is in-emacs autocomplete when executing `:package-install <pkg>` but that is unacceptable as a discovery solution; we need more info! So, note the Melpa website at least for now.
-
-#### Install Cask & Pallet
-- Cask Repo: https://github.com/cask/cask
-- Cask Docs: http://cask.readthedocs.org/en/latest
-- Pallet Repo: https://github.com/rdallasgray/pallet
-
-We have a bunch of things to do:
-```sh
-brew install cask
-# Create a home for our Emacs userland files.
-mkdir -p ./.emacs.d
-# Then, we have to manually tell Cask about Pallet.
-echo "(source melpa)\n\n(depends-on \"pallet\")" > ~/.emacs.d/Cask
-# Then, we have to manually tell Cask to install Pallet
-Cask install
-# Then, we need to manually tell Emacs about Pallet and pallet.
-# But first we need <path-to-cask>... That is in the root of where
-# we installed Cask... We can use brew info to remember that root
-brew info cask
-# and then figure out to use: 
-echo "(require 'cask \"/usr/local/Cellar/0.7.1/cask.el\")\n(cask-initialize)\n(require 'pallet)\n(pallet-mode t)" > ~/.emacs.d/init.el
-# So we require Cask, then activate it, then require Pallet, then activate it. Ok.
-```
